@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B1 English Practice — Stress & Self-Reflection</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+  :root {
+    --paper: #FBF8F3;
+    --ink: #2B2A28;
+    --ink-soft: #5C5A55;
+    --moss: #4B5D45;
+    --moss-deep: #364530;
+    --clay: #B0573E;
+    --line: #DCD5C7;
+    --card: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.6;
+    padding: 0 0 4rem;
+  }
+
+  header {
+    padding: 3rem 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 2.5rem;
+  }
+
+  header .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+  }
+
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    margin: 0 0 0.5rem;
+    color: var(--ink);
+  }
+
+  header p.sub {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .qa-block {
+    margin-bottom: 2.6rem;
+  }
+
+  .qa-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background: var(--moss);
+    color: #fff;
+    border-radius: 50%;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-right: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .qa-title-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.9rem;
+  }
+
+  .qa-title-row h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.22rem;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .answer-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--moss);
+    border-radius: 6px;
+    padding: 1.1rem 1.3rem;
+    margin-left: 2.7rem;
+  }
+
+  .answer-card p {
+    margin: 0;
+    font-size: 1.02rem;
+  }
+
+  .vocab-section {
+    margin-top: 4rem;
+  }
+
+  .vocab-section > .section-head {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .vocab-section > .section-head .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .vocab-section > .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin: 0;
+  }
+
+  .vocab-group {
+    margin-bottom: 2.2rem;
+  }
+
+  .vocab-group-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .vocab-group-title .dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--clay);
+  }
+
+  .vocab-group-title h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--moss-deep);
+  }
+
+  table.vocab-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  table.vocab-table th {
+    text-align: left;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    background: #F1EDE3;
+    padding: 0.6rem 0.9rem;
+    font-weight: 600;
+  }
+
+  table.vocab-table td {
+    padding: 0.62rem 0.9rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.98rem;
+    vertical-align: top;
+  }
+
+  table.vocab-table td.eng {
+    font-weight: 600;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  table.vocab-table td.az {
+    color: var(--moss-deep);
+  }
+
+  table.vocab-table tr:nth-child(even) td {
+    background: #FAF7F0;
+  }
+
+  .az-translation {
+    background: #F3F0E7;
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    padding: 0.95rem 1.3rem;
+    margin-left: 2.7rem;
+    margin-top: 0.6rem;
+  }
+
+  .az-translation .az-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 600;
+    margin-bottom: 0.45rem;
+  }
+
+  .az-translation p {
+    margin: 0;
+    font-size: 0.97rem;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  .stress-vocab-section {
+    margin-top: 3rem;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 1.8rem 1.6rem;
+  }
+
+  .stress-vocab-section .section-head {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .stress-vocab-section .section-head .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .stress-vocab-section .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .stress-vocab-section .section-head p {
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 3rem;
+    color: var(--ink-soft);
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 520px) {
+    .answer-card { margin-left: 0; }
+    .az-translation { margin-left: 0; }
+    .qa-title-row h2 { font-size: 1.08rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">English Practice · Level B1</div>
+  <h1>Stress &amp; Self-Reflection</h1>
+  <p class="sub">Five questions, five answers, and the vocabulary worth keeping from each one.</p>
+</header>
+
+<main>
+
+  <!-- Q1 -->
+  <div class="qa-block">
+    <div class="qa-title-row">
+      <span class="qa-number">1</span>
+      <h2>How do you handle stress?</h2>
+    </div>
+    <div class="answer-card">
+      <p>When I am stressed, I often tell myself that people don't think like me. Maybe they have some problems. I try to react with logic, not with stress. This protects me from making mistakes. So, I don't focus on the current moment, I think about the future results before I act. I also try to take a deep breath before I say anything, because angry words can hurt people and I cannot take them back. Sometimes I ask myself, "Will this still matter tomorrow?" If the answer is no, I let it go more easily. This way of thinking helps me stay calm in difficult situations, and it also helps me keep good relationships with the people around me.</p>
+    </div>
+    <div class="az-translation">
+      <div class="az-label">Azərbaycan dilində</div>
+      <p>Stressli olanda özümə tez-tez deyirəm ki, insanlar mənim kimi düşünmür. Bəlkə də onların problemləri var. Mən stresslə yox, ağılla cavab verməyə çalışıram. Bu məni səhv etməkdən qoruyur. Ona görə də indiki anı yox, hərəkət etməzdən əvvəl gələcək nəticələri düşünürəm. Həmçinin, nəsə demədən əvvəl dərindən nəfəs almağa çalışıram, çünki qəzəbli sözlər insanları incidə bilər və mən onları geri qaytara bilmirəm. Bəzən özümdən soruşuram: "Bu sabah da önəmli olacaq?" Cavab "yox"dursa, daha asanlıqla buraxıram. Bu düşüncə tərzi çətin vəziyyətlərdə sakit qalmağa kömək edir, həmçinin ətrafımdakı insanlarla münasibətlərimi yaxşı saxlamağa yardım edir.</p>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="qa-block">
+    <div class="qa-title-row">
+      <span class="qa-number">2</span>
+      <h2>What's one bad habit you are trying to break?</h2>
+    </div>
+    <div class="answer-card">
+      <p>I had a bad habit in the past. I tried too hard to make everyone happy, even if they were not important to me. I always gave my energy, but I didn't get anything back. After some time, this hurt my self-confidence and I had no energy for myself. Now, I want to change this habit. I am learning to say "no" when I really need to, and at first this felt strange and a little scary. I also try to ask myself if a person really deserves my time and energy before I help them. It is not easy, but step by step, I am learning to take care of myself first.</p>
+    </div>
+    <div class="az-translation">
+      <div class="az-label">Azərbaycan dilində</div>
+      <p>Keçmişdə bir pis vərdişim var idi. Mənim üçün vacib olmasalar belə, hamını xoşbəxt etmək üçün həddindən artıq çalışırdım. Həmişə enerjimi verirdim, amma əvəzində heç nə almırdım. Bir müddət sonra bu, özünə inamımı azaltdı və özüm üçün enerjim qalmadı. İndi bu vərdişi dəyişmək istəyirəm. Lazım olanda "yox" deməyi öyrənirəm, əvvəlcə bu mənə qəribə və bir az qorxulu gəlirdi. Həmçinin, kömək etməzdən əvvəl özümdən soruşuram ki, bu insan həqiqətən mənim vaxtıma və enerjime layiqdir, ya yox. Asan deyil, amma addım-addım özümə qayğı göstərməyi öyrənirəm.</p>
+    </div>
+  </div>
+
+  <!-- Q3 -->
+  <div class="qa-block">
+    <div class="qa-title-row">
+      <span class="qa-number">3</span>
+      <h2>What's your favorite way to relax after a long day?</h2>
+    </div>
+    <div class="answer-card">
+      <p>On days like this, I don't use my phone. When my brain is very tired, I start to draw something without thinking. Drawing calms my mind. I feel like I am putting all my problems on the paper. Also, I clean my room and change the places of my books. This helps me forget about stress and I relax. I usually do this in the evening, with some quiet music in the background and no notifications on my phone. I don't plan what I will draw; I just let my hand move and see what happens. By the end, my room is clean and my mind feels clean too, so I can sleep better and start the next day with a fresh mind.</p>
+    </div>
+    <div class="az-translation">
+      <div class="az-label">Azərbaycan dilində</div>
+      <p>Belə günlərdə telefondan istifadə etmirəm. Beynim çox yorğun olanda heç nə düşünmədən nələrsə çəkməyə başlayıram. Rəsm çəkmək beynimi sakitləşdirir. Elə hiss edirəm ki, bütün problemlərimi kağıza tökürəm. Həmçinin, otağımı yığışdırıram və kitablarımın yerini dəyişirəm. Bu, stressi unutmağa kömək edir və mən rahatlanıram. Adətən bunu axşamlar, fonda sakit musiqi ilə və telefonda bildirişlər olmadan edirəm. Nə çəkəcəyimi əvvəlcədən planlaşdırmıram, sadəcə əlimin hərəkət etməsinə icazə verirəm və nə alınacağına baxıram. Sonda otağım təmiz olur, beynim də təmiz hiss edir, ona görə daha yaxşı yatıram və sabahı təzə bir beynlə başlayıram.</p>
+    </div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="qa-block">
+    <div class="qa-title-row">
+      <span class="qa-number">4</span>
+      <h2>When do you feel guilty?</h2>
+    </div>
+    <div class="answer-card">
+      <p>I usually feel guilty when I don't follow my plans or waste my time. For example, if I know I can do a lot of work today but I choose to be lazy, I feel bad. However, I try to use this feeling to be more active the next day. I think a little guilt is not always bad, because it shows me that I care about my goals. But I also try not to be too hard on myself, because everyone has lazy days sometimes. When I feel this way, I make a short, simple plan for tomorrow instead of just feeling bad about today. This helps me turn guilt into action instead of just staying in a negative mood.</p>
+    </div>
+    <div class="az-translation">
+      <div class="az-label">Azərbaycan dilində</div>
+      <p>Adətən planlarıma əməl etmədikdə və ya vaxtımı boş keçirdikdə özümü günahkar hiss edirəm. Məsələn, bilirəm ki, bu gün çox iş görə bilərəm, amma tənbəllik etməyi seçirəmsə, özümü pis hiss edirəm. Lakin bu hissi sabah daha aktiv olmaq üçün istifadə etməyə çalışıram. Düşünürəm ki, bir az günahkarlıq hissi həmişə pis deyil, çünki bu mənə göstərir ki, məqsədlərimə əhəmiyyət verirəm. Amma özümə qarşı çox sərt olmamağa da çalışıram, çünki hər kəsin tənbəl günləri olur. Bu cür hiss edəndə, sadəcə bu gün üçün pis hiss etmək əvəzinə, sabah üçün qısa, sadə bir plan qururam. Bu, günahkarlıq hissini sadəcə mənfi ovqatda qalmaq əvəzinə hərəkətə çevirməyə kömək edir.</p>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="qa-block">
+    <div class="qa-title-row">
+      <span class="qa-number">5</span>
+      <h2>Do you meditate or practice mindfulness?</h2>
+    </div>
+    <div class="answer-card">
+      <p>I don't do real meditation, but I have my own ways. For example, when I draw or clean my room, I only think about that work. I don't think about the past or the future, I just stay in the moment. For me, the best meditation is to forget about daily work and do something simple. Also, another good meditation for me is watching the cartoons or movies I watched as a child, in the times when I understood myself. Because those were times when my brain felt completely safe. When the brain sees that you are in a safe moment again, it goes into its recovery mode. I think real meditation does not have to be sitting still with closed eyes; it can be any activity where your mind is fully present. For me, these small habits work better than formal meditation apps, because they feel natural and not like another task on my to-do list. Maybe one day I will try real meditation too, but for now, my own simple methods help me feel calm and balanced.</p>
+    </div>
+    <div class="az-translation">
+      <div class="az-label">Azərbaycan dilində</div>
+      <p>Əsl meditasiya etmirəm, amma öz metodlarım var. Məsələn, rəsm çəkəndə və ya otağımı yığışdıranda, sadəcə o işi düşünürəm. Keçmişi və ya gələcəyi düşünmürəm, sadəcə anı yaşayıram. Mənim üçün ən yaxşı meditasiya gündəlik işləri unutmaq və sadə bir şey etməkdir. Həmçinin, mənim üçün yaxşı bir meditasiya da uşaq vaxtı, özümü başa düşdüyüm zamanlarda izlədiyim cizgi filmlər və ya filmlərə baxmaqdır. Çünki bunlar beynimin tam təhlükəsiz hiss etdiyi zamanlar idi. Beyin yenidən təhlükəsiz bir anda olduğunu görəndə, bərpa moduna keçir. Düşünürəm ki, əsl meditasiya gözlər bağlı sakit oturmaq deyil; bu, beyninizin tam orada olduğu istənilən fəaliyyət ola bilər. Mənim üçün bu kiçik vərdişlər rəsmi meditasiya tətbiqlərindən daha yaxşı işləyir, çünki onlar təbii hiss olunur, siyahımdakı başqa bir vəzifə kimi yox. Bəlkə bir gün əsl meditasiyanı da sınayacam, amma indilik öz sadə metodlarım özümü sakit və balanslı hiss etməyə kömək edir.</p>
+    </div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <section class="vocab-section">
+    <div class="section-head">
+      <div class="eyebrow">Word Bank</div>
+      <h2>Vocabulary</h2>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-group-title"><span class="dot"></span><h3>1. Handling Stress</h3></div>
+      <table class="vocab-table">
+        <tr><th>English</th><th>Azərbaycan dili</th></tr>
+        <tr><td class="eng">stressed</td><td class="az">stressli</td></tr>
+        <tr><td class="eng">to react with logic</td><td class="az">ağılla cavab vermək</td></tr>
+        <tr><td class="eng">to protect (someone) from</td><td class="az">qorumaq</td></tr>
+        <tr><td class="eng">to make a mistake</td><td class="az">səhv etmək</td></tr>
+        <tr><td class="eng">current moment</td><td class="az">indiki an / vəziyyət</td></tr>
+        <tr><td class="eng">future results</td><td class="az">sonrakı / gələcək nəticə</td></tr>
+        <tr><td class="eng">to act</td><td class="az">hərəkət etmək</td></tr>
+        <tr><td class="eng">to take a deep breath</td><td class="az">dərindən nəfəs almaq</td></tr>
+        <tr><td class="eng">to let (something) go</td><td class="az">buraxmaq / əhəmiyyət verməmək</td></tr>
+        <tr><td class="eng">to stay calm</td><td class="az">sakit qalmaq</td></tr>
+      </table>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-group-title"><span class="dot"></span><h3>2. Breaking a Bad Habit</h3></div>
+      <table class="vocab-table">
+        <tr><th>English</th><th>Azərbaycan dili</th></tr>
+        <tr><td class="eng">bad habit</td><td class="az">pis vərdiş</td></tr>
+        <tr><td class="eng">to try too hard</td><td class="az">həddindən artıq çalışmaq</td></tr>
+        <tr><td class="eng">to give energy</td><td class="az">enerji vermək</td></tr>
+        <tr><td class="eng">to get something back</td><td class="az">əvəzini almaq / qarşılığını görmək</td></tr>
+        <tr><td class="eng">self-confidence</td><td class="az">özünə inam</td></tr>
+        <tr><td class="eng">to hurt (one's confidence)</td><td class="az">zədələmək / azaltmaq</td></tr>
+        <tr><td class="eng">to change a habit</td><td class="az">vərdişi dəyişmək</td></tr>
+        <tr><td class="eng">to say "no"</td><td class="az">"yox" demək</td></tr>
+        <tr><td class="eng">to deserve (something)</td><td class="az">layiq olmaq</td></tr>
+        <tr><td class="eng">step by step</td><td class="az">addım-addım</td></tr>
+      </table>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-group-title"><span class="dot"></span><h3>3. Relaxing After a Long Day</h3></div>
+      <table class="vocab-table">
+        <tr><th>English</th><th>Azərbaycan dili</th></tr>
+        <tr><td class="eng">to be tired</td><td class="az">yorğun olmaq</td></tr>
+        <tr><td class="eng">to draw</td><td class="az">çəkmək (rəsm)</td></tr>
+        <tr><td class="eng">to calm one's mind</td><td class="az">beyni sakitləşdirmək</td></tr>
+        <tr><td class="eng">to put problems on paper</td><td class="az">qarışıqlığı kağıza tökmək</td></tr>
+        <tr><td class="eng">to clean one's room</td><td class="az">otağı yığışdırmaq</td></tr>
+        <tr><td class="eng">to forget about stress</td><td class="az">stressi unutmaq</td></tr>
+        <tr><td class="eng">to relax</td><td class="az">rahatlamaq / dincəlmək</td></tr>
+        <tr><td class="eng">in the background</td><td class="az">fonda</td></tr>
+        <tr><td class="eng">fresh mind</td><td class="az">təzə / aydın beyin</td></tr>
+      </table>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-group-title"><span class="dot"></span><h3>4. Feeling Guilty</h3></div>
+      <table class="vocab-table">
+        <tr><th>English</th><th>Azərbaycan dili</th></tr>
+        <tr><td class="eng">to feel guilty</td><td class="az">özünü günahkar hiss etmək</td></tr>
+        <tr><td class="eng">to follow a plan</td><td class="az">plana əməl etmək</td></tr>
+        <tr><td class="eng">to waste time</td><td class="az">vaxtı boş keçirmək</td></tr>
+        <tr><td class="eng">to be lazy</td><td class="az">tənbəllik etmək</td></tr>
+        <tr><td class="eng">to feel bad</td><td class="az">özünü pis hiss etmək</td></tr>
+        <tr><td class="eng">to be more active</td><td class="az">daha aktiv olmaq</td></tr>
+        <tr><td class="eng">to be hard on oneself</td><td class="az">özünə qarşı sərt olmaq</td></tr>
+        <tr><td class="eng">negative mood</td><td class="az">mənfi ovqat</td></tr>
+      </table>
+    </div>
+
+    <div class="vocab-group">
+      <div class="vocab-group-title"><span class="dot"></span><h3>5. Meditation & Mindfulness</h3></div>
+      <table class="vocab-table">
+        <tr><th>English</th><th>Azərbaycan dili</th></tr>
+        <tr><td class="eng">real meditation</td><td class="az">normal / əsl meditasiya</td></tr>
+        <tr><td class="eng">my own way(s)</td><td class="az">öz metodum / metodlarım</td></tr>
+        <tr><td class="eng">to stay in the moment</td><td class="az">anı yaşamaq</td></tr>
+        <tr><td class="eng">to forget about daily work</td><td class="az">gündəlik işləri unutmaq</td></tr>
+        <tr><td class="eng">to do something simple</td><td class="az">sadə bir şey etmək</td></tr>
+        <tr><td class="eng">to watch cartoons/movies</td><td class="az">çizgi film / film izləmək</td></tr>
+        <tr><td class="eng">to feel safe</td><td class="az">təhlükəsiz hiss etmək</td></tr>
+        <tr><td class="eng">recovery mode</td><td class="az">bərpa modu</td></tr>
+        <tr><td class="eng">to be fully present</td><td class="az">tam orada olmaq / diqqəti tam orda olmaq</td></tr>
+        <tr><td class="eng">to feel calm and balanced</td><td class="az">sakit və balanslı hiss etmək</td></tr>
+      </table>
+    </div>
+
+  </section>
+
+  <!-- STRESS & WELLBEING VOCABULARY -->
+  <section class="stress-vocab-section">
+    <div class="section-head">
+      <div class="eyebrow">Theme Round-Up</div>
+      <h2>Stress &amp; Wellbeing Vocabulary</h2>
+      <p>Every stress-, emotion-, and self-care-related word used above, gathered in one place.</p>
+    </div>
+    <table class="vocab-table">
+      <tr><th>English</th><th>Azərbaycan dili</th></tr>
+      <tr><td class="eng">stress / stressed</td><td class="az">stress / stressli</td></tr>
+      <tr><td class="eng">to react with logic</td><td class="az">ağılla cavab vermək</td></tr>
+      <tr><td class="eng">to stay calm</td><td class="az">sakit qalmaq</td></tr>
+      <tr><td class="eng">to take a deep breath</td><td class="az">dərindən nəfəs almaq</td></tr>
+      <tr><td class="eng">to let (something) go</td><td class="az">buraxmaq / əhəmiyyət verməmək</td></tr>
+      <tr><td class="eng">to feel guilty</td><td class="az">özünü günahkar hiss etmək</td></tr>
+      <tr><td class="eng">negative mood</td><td class="az">mənfi ovqat</td></tr>
+      <tr><td class="eng">to be hard on oneself</td><td class="az">özünə qarşı sərt olmaq</td></tr>
+      <tr><td class="eng">self-confidence</td><td class="az">özünə inam</td></tr>
+      <tr><td class="eng">to hurt (one's confidence)</td><td class="az">zədələmək / azaltmaq</td></tr>
+      <tr><td class="eng">to take care of oneself</td><td class="az">özünə qayğı göstərmək</td></tr>
+      <tr><td class="eng">to calm one's mind</td><td class="az">beyni sakitləşdirmək</td></tr>
+      <tr><td class="eng">to forget about stress</td><td class="az">stressi unutmaq</td></tr>
+      <tr><td class="eng">to relax</td><td class="az">rahatlamaq / dincəlmək</td></tr>
+      <tr><td class="eng">fresh mind</td><td class="az">təzə / aydın beyin</td></tr>
+      <tr><td class="eng">to stay in the moment</td><td class="az">anı yaşamaq</td></tr>
+      <tr><td class="eng">to feel safe</td><td class="az">təhlükəsiz hiss etmək</td></tr>
+      <tr><td class="eng">recovery mode</td><td class="az">bərpa modu</td></tr>
+      <tr><td class="eng">to be fully present</td><td class="az">diqqəti tam orada olmaq</td></tr>
+      <tr><td class="eng">to feel calm and balanced</td><td class="az">sakit və balanslı hiss etmək</td></tr>
+    </table>
+  </section>
+
+  <footer>B1 Level English Practice — Vocabulary built from your own answers</footer>
+
+</main>
+
+</body>
+</html>
